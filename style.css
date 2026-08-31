@@ -159,17 +159,23 @@ nav a:hover {
 
 .hero {
   position: relative;
-  min-height: 680px;
+  min-height: 720px;
   display: flex;
   align-items: center;
   overflow: hidden;
-  background:
+
+  background-image:
     linear-gradient(
       90deg,
-      rgba(255,255,255,1) 0%,
-      rgba(255,255,255,.98) 55%,
-      rgba(246,248,250,.75) 100%
-    );
+      rgba(7, 29, 52, 0.88) 0%,
+      rgba(7, 29, 52, 0.68) 38%,
+      rgba(7, 29, 52, 0.18) 72%,
+      rgba(7, 29, 52, 0.05) 100%
+    ),
+    url("hero-fanc.png");
+
+  background-size: cover;
+  background-position: center;
 }
 
 .hero::after {
@@ -179,30 +185,27 @@ nav a:hover {
   height: 420px;
   right: -180px;
   top: -150px;
-  border: 1px solid rgba(197,162,83,.25);
+  border: 1px solid rgba(197, 162, 83, 0.35);
   transform: rotate(45deg);
+  pointer-events: none;
 }
 
 .hero-grid {
-  display: grid;
-  grid-template-columns: 1.25fr .75fr;
-  align-items: center;
-  gap: 90px;
-}
+  position: relative;
+  z-index: 2;
 
-.eyebrow {
-  margin: 0 0 18px;
-  color: var(--gold);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2.2px;
-  text-transform: uppercase;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 40px;
 }
 
 .hero h1 {
-  max-width: 760px;
+  max-width: 800px;
   margin: 0;
-  color: var(--blue);
+
+  color: var(--white);
+
   font-size: clamp(42px, 6vw, 74px);
   font-weight: 700;
   letter-spacing: -2px;
@@ -214,12 +217,18 @@ nav a:hover {
   font-style: normal;
 }
 
-.lead {
+.hero .lead {
   max-width: 680px;
   margin: 30px 0 0;
-  color: var(--muted);
+
+  color: rgba(255, 255, 255, 0.88);
+
   font-size: 17px;
   line-height: 1.8;
+}
+
+.hero .eyebrow {
+  color: var(--gold);
 }
 
 .actions {
@@ -229,49 +238,36 @@ nav a:hover {
   margin-top: 36px;
 }
 
-.hero-card {
-  position: relative;
-  padding: 46px 40px;
-  background: var(--blue);
-  color: var(--white);
-  box-shadow: 18px 18px 0 var(--gold);
-}
-
-.hero-card-top {
-  margin-bottom: 32px;
-  color: var(--gold);
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: 5px;
-}
-
-.hero-card p {
-  margin: 0 0 10px;
-  color: rgba(255,255,255,.72);
-  font-size: 12px;
-  letter-spacing: .4px;
-}
-
-.hero-card strong {
-  display: block;
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-.hero-card .line {
-  width: 60px;
-  height: 2px;
-  margin: 28px 0;
+.hero .btn {
   background: var(--gold);
+  border-color: var(--gold);
+  color: var(--blue);
 }
 
-.hero-card span {
-  color: rgba(255,255,255,.7);
-  font-size: 10px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.hero .btn:hover {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--blue);
 }
 
+.hero .btn-ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.75);
+  color: var(--white);
+}
+
+.hero .btn-ghost:hover {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--blue);
+}
+
+/* O cartão azul deixa de ser necessário
+   porque a imagem passa a ser o elemento principal */
+
+.hero-card {
+  display: none;
+}
 
 /* =========================
    SECTIONS
@@ -689,6 +685,15 @@ footer {
     max-width: 520px;
   }
 
+  .hero {
+  min-height: 650px;
+  background-position: 58% center;
+}
+
+.hero h1 {
+  font-size: 42px;
+}
+ 
   .cards,
   .project-grid {
     grid-template-columns: 1fr 1fr;
@@ -750,11 +755,6 @@ footer {
 
   .actions .btn {
     width: 100%;
-  }
-
-  .hero-card {
-    padding: 35px 28px;
-    box-shadow: 10px 10px 0 var(--gold);
   }
 
   .cards,
