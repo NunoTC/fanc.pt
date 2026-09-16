@@ -65,8 +65,8 @@ a {
 
 .brand img {
   display: block;
-  width: 150px;
-  height: 60px;
+  width: 100px;
+  height: 45px;
   object-fit: contain;
 }
 
