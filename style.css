@@ -61,16 +61,14 @@ a {
   display: flex;
   align-items: center;
   line-height: 1;
-  height: 65px;
-  overflow: hidden;
 }
 
 .brand img {
   display: block;
   width: 150px;
-  height: 150px;
+  height: 60px;
   object-fit: contain;
-  transform: scale(1.35);
+  transform: none;
 }
 
 nav {
