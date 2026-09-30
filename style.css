@@ -67,9 +67,7 @@ a {
   display: block;
   width: 220px;
   height: 80px;
-  object-fit: cover; 
-  object-position: center; 
-  transform: scale(1.4); 
+  object-fit: contain;
 }
 
 nav {
